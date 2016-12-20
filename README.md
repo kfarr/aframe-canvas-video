@@ -1,5 +1,5 @@
 # aframe-canvas-video
-A hacky experiment to play video in DOM canvas element and then render canvas as a texture in A-Frame VR.
+A hacky experiment to play video in DOM canvas element and then render canvas as a texture in A-Frame VR. [Click here for demo.](https://kfarr.github.io/aframe-canvas-video/)
 
 This works, kind of. It's not the "right" way to do this as it duplicates the rendering of video to the canvas object which is not really optimized for this sort of use case. Further, it will likely break down at larger resolutions that would be desirable for 360 video, so its use is limited.
 
