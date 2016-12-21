@@ -1,36 +1,31 @@
 <html>
     <head>
+      <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+      <script src="scripts/canvas-video-player.js"></script>
     </head>
     <body>
-
-        <a-scene>
-            <a-video src="#js-canvas" width="16" height="9" position="0 0 -5"></a-video>
-            <a-node></a-node> <!-- this is a hack to delay aframe from initiating -->
-            <a-sky color="#000"></a-sky>
-        </a-scene>
-
+      <a-scene>
+          <a-video src="#js-canvas" width="16" height="9" position="0 0 -5"></a-video>
+          <a-sky color="#000"></a-sky>
+      </a-scene>
+      <div style="visibility: hidden;">
         <canvas id="js-canvas" class="canvas js-canvas" width="1440" height="900" ></canvas>
-
-        <video id="js-video" class="video js-video" muted>
+        <video id="js-video" class="video js-video" muted loop>
           <source src="big_buck_bunny.webm" type="video/webm">
           <!-- <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.webm" type="video/webm">
           <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4">
           <source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.ogv" type="video/ogg"> -->
           Your browser does not support HTML5 video.
         </video>
-        <script src="scripts/canvas-video-player.js"></script>
-        <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-      	<script>
-      		var canvasVideo = new CanvasVideoPlayer({
-      			videoSelector: '.js-video',
-      			canvasSelector: '.js-canvas',
-      			audio: false,
-            autoplay: true,
-            loop: true
-      		});
-
-          document.querySelector('a-node').load(); // this instantiates aframe
-      	</script>
-
-      </body>
+      </div>
+    	<script>
+    		var canvasVideo = new CanvasVideoPlayer({
+    			videoSelector: '.js-video',
+    			canvasSelector: '.js-canvas',
+    			audio: false,
+          autoplay: true,
+          loop: true
+    		});
+    	</script>
+     </body>
 </html>
